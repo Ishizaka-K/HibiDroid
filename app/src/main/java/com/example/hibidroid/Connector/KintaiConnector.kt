@@ -10,6 +10,7 @@ import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import okhttp3.RequestBody
+import okhttp3.RequestBody.Companion.toRequestBody
 import okhttp3.Response
 import org.json.JSONArray
 import org.json.JSONException
@@ -34,11 +35,11 @@ class KintaiConnector {
     private var countDownLatch: CountDownLatch? = null
 
     //setterとgetter
-    fun geturlStr(): String {
+    fun getUrl(): String {
         return urlStr
     }
 
-    fun seturlStr(urlStr: String) {
+    fun setUrl(urlStr: String) {
         this.urlStr = urlStr
     }
 
@@ -131,6 +132,65 @@ class KintaiConnector {
                     Log.d("状態", "Empty")
                     setrespJsonArr(null)
                 }
+            }
+        })
+    }
+
+    private val client = OkHttpClient.Builder()
+        .connectTimeout(CONNECTION_TIMEOUT_MILLISECONDS.toLong(), TimeUnit.MILLISECONDS)
+        .readTimeout(READ_TIMEOUT_MILLISECONDS.toLong(), TimeUnit.MILLISECONDS)
+        .build()
+
+    override fun startGetRequest() {
+        // Requestを作成
+        val request = Request.Builder()
+            .url("ここにURL")
+            .build()
+
+        client.newCall(request).enqueue(object : Callback {
+            override fun onResponse(call: Call, response: Response) {
+                // Responseの読み出し
+                val responseBody = response.body?.string().orEmpty()
+                // 必要に応じてCallback
+            }
+
+            override fun onFailure(call: Call, e: IOException) {
+                Log.e("Error", e.toString())
+                // 必要に応じてCallback
+            }
+        })
+    }
+
+
+
+    //POST
+    private val client = OkHttpClient.Builder()
+        .connectTimeout(CONNECTION_TIMEOUT_MILLISECONDS.toLong(), TimeUnit.MILLISECONDS)
+        .readTimeout(READ_TIMEOUT_MILLISECONDS.toLong(), TimeUnit.MILLISECONDS)
+        .build()
+
+    private val JSON_MEDIA = "application/json; charset=utf-8".toMediaType()
+
+    override fun startPostRequest() {
+        // Bodyのデータ（サンプル）
+        val sendDataJson = "{\"id\":\"1234567890\",\"name\":\"hogehoge\"}"
+
+        // Requestを作成
+        val request = Request.Builder()
+            .url(urlStr)
+            .post(sendDataJson.toRequestBody(JSON_MEDIA))
+            .build()
+
+        client.newCall(request).enqueue(object : Callback {
+            override fun onResponse(call: Call, response: Response) {
+                // Responseの読み出し
+                val responseBody = response.body?.string().orEmpty()
+                // 必要に応じてCallback
+            }
+
+            override fun onFailure(call: Call, e: IOException) {
+                Log.e("Error", e.toString())
+                // 必要に応じてCallback
             }
         })
     }
