@@ -1,4 +1,4 @@
-package com.example.hibidroid.ui.main
+package com.example.hibidroid.ui.main.Fragments
 
 import androidx.fragment.app.viewModels
 import android.os.Bundle
@@ -9,10 +9,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
-import androidx.lifecycle.findViewTreeViewModelStoreOwner
 import com.example.hibidroid.Connector.KintaiConnector
 
 import com.example.hibidroid.R
+import com.example.hibidroid.ui.main.ViewModels.MainViewModel
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import java.util.concurrent.TimeUnit

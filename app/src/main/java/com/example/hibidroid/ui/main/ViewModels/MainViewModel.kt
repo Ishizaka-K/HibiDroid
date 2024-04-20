@@ -1,4 +1,4 @@
-package com.example.hibidroid.ui.main
+package com.example.hibidroid.ui.main.ViewModels
 
 import androidx.lifecycle.ViewModel
 
