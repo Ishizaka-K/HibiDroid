@@ -18,7 +18,7 @@
         android:theme="@style/Theme.HibiDroid"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".Activitys.MainActivity"
+            android:name=".activitys.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

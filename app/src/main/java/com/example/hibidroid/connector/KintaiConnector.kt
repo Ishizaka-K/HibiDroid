@@ -1,26 +1,20 @@
-package com.example.hibidroid.Connector
+package com.example.hibidroid.connector
 
-import android.content.Context
-import android.net.ConnectivityManager
-import android.telecom.Call
 import android.util.Log
+import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.hibidroid.viewModels.MainViewModel
 import okhttp3.Callback
-import okhttp3.MediaType
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
 import okhttp3.Request
-import okhttp3.RequestBody
 import okhttp3.RequestBody.Companion.toRequestBody
 import okhttp3.Response
-import org.json.JSONArray
-import org.json.JSONException
-import org.json.JSONObject
 import java.io.IOException
-import java.util.concurrent.CountDownLatch
 import java.util.concurrent.TimeUnit
 
 
 class KintaiConnector {
+
     //接続先のurl
 //    private var urlStr = ""
 //
@@ -142,24 +136,13 @@ class KintaiConnector {
 
         val JSON_MEDIA = "application/json; charset=utf-8".toMediaType()
 
-//        var client: OkHttpClient = OkHttpClient().newBuilder()
-//            .readTimeout((15 * 1000).toLong(), TimeUnit.MILLISECONDS)
-//            .writeTimeout((20 * 1000).toLong(), TimeUnit.MILLISECONDS)
-//            .connectTimeout((20 * 1000).toLong(), TimeUnit.MILLISECONDS)
-//            .build()
-//
-//        // Requestを作成
-//        val request = Request.Builder()
-//            .url("https://api.open-meteo.com/v1/forecast?latitude=35.6785&longitude=139.6823&current_weather=true")
-//            .build()
-
         var responseBody: String = String()
         var resposeJson: Response
         client.newCall(request).enqueue(object : Callback {
             override fun onResponse(call: okhttp3.Call, response: Response) {
                 resposeJson = response
-                Log.d("Response", response.body.toString())
-                responseBody = response.headers.toString()
+                responseBody = response.headers.getDate("date").toString()
+                Log.d("Response", responseBody)
             }
 
             override fun onFailure(call: okhttp3.Call, e: IOException) {
@@ -169,6 +152,7 @@ class KintaiConnector {
         })
         return responseBody
     }
+
 
     fun startPostRequest() {
 

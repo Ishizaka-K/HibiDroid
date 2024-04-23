@@ -1,10 +1,10 @@
-package com.example.hibidroid.Activitys
+package com.example.hibidroid.activitys
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.example.hibidroid.R
-import com.example.hibidroid.ui.main.Fragments.MainFragment
+import com.example.hibidroid.fragments.MainFragment
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

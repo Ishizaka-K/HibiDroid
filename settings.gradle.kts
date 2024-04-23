@@ -21,4 +21,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "HibiDroid"
 include(":app")
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
  
