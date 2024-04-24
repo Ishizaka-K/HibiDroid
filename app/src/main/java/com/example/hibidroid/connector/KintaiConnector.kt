@@ -147,7 +147,7 @@ class KintaiConnector {
 
             override fun onFailure(call: okhttp3.Call, e: IOException) {
                 Log.e("Error", e.toString())
-                // 必要に応じてCallback
+                // 必要に応じてCallbacksuru
             }
         })
         return responseBody

@@ -16,7 +16,7 @@ lifecycleViewmodelCompose = "2.7.0"
 okhttp = "4.11.0"
 ksp = "1.9.20-1.0.13"
 room = "2.6.0"
-lifecycle-runtime-ktx = "2.6.2"
+lifecycle-runtimed-ktx = "2.6.2"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
