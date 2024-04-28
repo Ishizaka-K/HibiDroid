@@ -1,6 +1,8 @@
 package com.example.hibidroid.connector
 
 import android.util.Log
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.hibidroid.viewModels.MainViewModel
 import okhttp3.Callback
@@ -143,6 +145,7 @@ class KintaiConnector {
                 resposeJson = response
                 responseBody = response.headers.getDate("date").toString()
                 Log.d("Response", responseBody)
+                MainViewModel().liveDataText=responseBody.toString()
             }
 
             override fun onFailure(call: okhttp3.Call, e: IOException) {
