@@ -63,6 +63,9 @@ dependencies {
     //Okhttp3
     implementation(libs.okhttp)
 
+    //Gson
+    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
