@@ -5,7 +5,7 @@
     <data>
         <import type="android.view.View"/>
         <variable name="viewModel"
-            type="com.example.hibidroid.viewModels.MainViewModel" />
+            type="com.example.hibidroid.ViewModels.MainViewModel" />
 <!--        <variable-->
 <!--            name="buttonText"-->
 <!--            type="String" />-->
@@ -16,7 +16,7 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.MainFragment">
+    tools:context=".Fragments.MainFragment">
 
     <TextView
         android:id="@+id/message"

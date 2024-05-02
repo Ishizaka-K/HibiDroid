@@ -1,4 +1,4 @@
-package com.example.hibidroid.fragments
+package com.example.hibidroid.Fragments
 
 import androidx.fragment.app.viewModels
 import android.os.Bundle
@@ -9,13 +9,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
-import androidx.databinding.DataBindingUtil
-import com.example.hibidroid.connector.ConnectorUtil
+import com.example.hibidroid.Connector.ConnectorUtil
 
 import com.example.hibidroid.R
-import com.example.hibidroid.connector.KintaiConnector
+import com.example.hibidroid.Connector.KintaiConnector
 import com.example.hibidroid.databinding.FragmentMainBinding
-import com.example.hibidroid.viewModels.MainViewModel
+import com.example.hibidroid.ViewModels.MainViewModel
 
 class MainFragment : Fragment() {
     lateinit var mRootView:View

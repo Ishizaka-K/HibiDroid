@@ -1,4 +1,4 @@
-package com.example.hibidroid.connector
+package com.example.hibidroid.Connector
 
 import okhttp3.OkHttpClient
 import okhttp3.Request

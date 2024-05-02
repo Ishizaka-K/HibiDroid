@@ -1,10 +1,7 @@
-package com.example.hibidroid.connector
+package com.example.hibidroid.Connector
 
 import android.util.Log
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
-import androidx.lifecycle.viewmodel.compose.viewModel
-import com.example.hibidroid.viewModels.MainViewModel
+import com.example.hibidroid.ViewModels.MainViewModel
 import okhttp3.Callback
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
