@@ -10,7 +10,7 @@ class KintaiEntity {
         @PrimaryKey
         @ColumnInfo(name = "descripsion")
         val descripsion: String
-        //hello
+        //helloaaa
     )
 
 }
