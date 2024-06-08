@@ -6,6 +6,7 @@ import androidx.room.Entity
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
+//aa
 class dataBase {
     @Database(entities = [HibicodeEntity::class], version = 1)
     abstract class AppDatabase:RoomDatabase(){
