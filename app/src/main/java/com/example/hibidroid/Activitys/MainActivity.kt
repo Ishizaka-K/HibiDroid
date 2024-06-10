@@ -53,6 +53,7 @@ class MainActivity : AppCompatActivity() {
                 MyApp(modifier = Modifier.fillMaxSize())
             }
         }
+
     }
 }
 
