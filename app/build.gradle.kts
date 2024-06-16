@@ -66,6 +66,8 @@ dependencies {
     //Gson
     implementation (libs.converter.gson)
 
+    implementation("androidx.activity:activity-ktx:1.4.0")
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)

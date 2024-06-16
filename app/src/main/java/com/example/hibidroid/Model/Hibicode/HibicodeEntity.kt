@@ -1,4 +1,4 @@
-package com.example.hibidroid.DataBase
+package com.example.hibidroid.Model.Hibicode
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
