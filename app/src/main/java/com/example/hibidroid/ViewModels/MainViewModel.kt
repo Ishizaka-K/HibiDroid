@@ -29,10 +29,10 @@ class MainViewModel(private val repository: HibicodeRepository) : ViewModel() {
 }
 
 class MainViewModelFactory(private val repository: HibicodeRepository) : ViewModelProvider.Factory {
-    override fun <T : ViewModel> create(modelClass: Class<T>): T {
+    override fun <viewmodel : ViewModel> create(modelClass: Class<viewmodel>): viewmodel {
         if (modelClass.isAssignableFrom(MainViewModel::class.java)) {
             @Suppress("UNCHECKED_CAST")
-            return MainViewModel(repository) as T
+            return MainViewModel(repository) as viewmodel
         }
         throw IllegalArgumentException("Unknown ViewModel class")
     }
