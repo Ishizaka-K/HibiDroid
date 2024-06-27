@@ -23,7 +23,7 @@ class KintaiConnector {
                 resposeJson = response
                 responseBody = response.headers.getDate("date").toString()
                 Log.d("Response", responseBody)
-                MainViewModel().liveDataText=responseBody.toString()
+                //MainViewModel().liveDataText=responseBody.toString()
             }
 
             override fun onFailure(call: okhttp3.Call, e: IOException) {
